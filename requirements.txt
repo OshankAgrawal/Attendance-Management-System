@@ -1,0 +1,8 @@
+SQLAlchemy
+PyMySQL
+python-dotenv
+opencv-python
+insightface
+scikit-learn
+mediapipe==0.10.14
+flask
