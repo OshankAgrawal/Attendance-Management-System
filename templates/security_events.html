@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}
+Security Events
+{% endblock %}
+
+{% block page_title %}
+Security Events
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+
+    <h2>Security Events</h2>
+
+    <br>
+
+    <table class="employee-table">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Event Type</th>
+                <th>Employee ID</th>
+                <th>Description</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for event in events %}
+
+            <tr>
+
+                <td>{{ event.id }}</td>
+
+                <td>
+
+                    {% if event.event_type == "LIVENESS_FAILED" %}
+                        <span class="badge-danger">
+                            {{ event.event_type }}
+                        </span>
+
+                    {% elif event.event_type == "UNKNOWN_PERSON" %}
+                        <span class="badge-warning">
+                            {{ event.event_type }}
+                        </span>
+
+                    {% else %}
+                        <span class="badge-info">
+                            {{ event.event_type }}
+                        </span>
+
+                    {% endif %}
+
+                </td>
+
+                <td>
+                    {{ event.employee_id or "-" }}
+                </td>
+
+                <td>
+                    {{ event.description or "-" }}
+                </td>
+
+                <td>
+                    {{ event.created_at.strftime("%d-%m-%Y %H:%M") }}
+                </td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

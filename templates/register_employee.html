@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}
+Register Employee
+{% endblock %}
+
+{% block page_title %}
+Register Employee
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+    <form method="POST">
+
+        <div class="form-group">
+            <label>Employee ID</label>
+            <input type="text"
+                   name="employee_id"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text"
+                   name="full_name"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Department</label>
+            <input type="text"
+                   name="department"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Designation</label>
+            <input type="text"
+                   name="designation"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email"
+                   name="email"
+                   required>
+        </div>
+
+        <button type="submit"
+                class="btn-primary">
+
+            Save Employee
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

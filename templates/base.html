@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Attendance Management System{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <div class="logo">
+            <h2>AMS</h2>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="/dashboard">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/employees">
+                    <i class="fas fa-users"></i>
+                    Employees
+                </a>
+            </li>
+
+            <li>
+                <a href="/register">
+                    <i class="fas fa-user-plus"></i>
+                    Register Employee
+                </a>
+            </li>
+
+            <li>
+                <a href="/attendance">
+                    <i class="fas fa-camera"></i>
+                    Attendance
+                </a>
+            </li>
+
+            <li>
+                <a href="/reports">
+                    <i class="fas fa-chart-line"></i>
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="/security-events">
+                    <i class="fas fa-shield-alt"></i>
+                    Security Events
+                </a>
+            </li>
+
+            <li>
+                <a href="/logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <h2>{% block page_title %}{% endblock %}</h2>
+        </div>
+
+        <!-- Dynamic Content -->
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </div>
+
+</body>
+</html>

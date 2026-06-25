@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}
+Attendance Result
+{% endblock %}
+
+{% block page_title %}
+Attendance Result
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+{% if result.success %}
+
+    <h2>Attendance Verified Successfully</h2>
+
+    <br>
+
+    <p>
+        <strong>Employee ID:</strong>
+        {{ result.employee_id }}
+    </p>
+
+    <p>
+        <strong>Name:</strong>
+        {{ result.employee_name }}
+    </p>
+
+    <p>
+        <strong>Weighted Similarity:</strong>
+        {{ result.weighted_average }}
+    </p>
+
+    <p>
+        <strong>Best Similarity:</strong>
+        {{ result.best_similarity }}
+    </p>
+
+    <p>
+        <strong>Action:</strong>
+        {{ result.attendance.action }}
+    </p>
+
+{% else %}
+
+    <h2>Verification Failed</h2>
+
+    <br>
+
+    <p>
+        {{ result.message }}
+    </p>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block page_title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="cards">
+
+    <div class="card">
+        <h3>Total Employees</h3>
+        <h1>{{ total_employees }}</h1>
+    </div>
+
+    <div class="card">
+        <h3>Present Today</h3>
+        <h1>{{ present_today }}</h1>
+    </div>
+
+    <div class="card">
+        <h3>Absent Today</h3>
+        <h1>{{ absent_today }}</h1>
+    </div>
+
+    <div class="card">
+        <h3>Security Events</h3>
+        <h1>{{ security_events }}</h1>
+    </div>
+
+</div>
+
+{% endblock %}

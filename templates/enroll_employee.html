@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}
+Face Enrollment
+{% endblock %}
+
+{% block page_title %}
+Face Enrollment
+{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+    <h2>Employee Registered Successfully</h2>
+
+    <br>
+
+    <p>
+        <strong>Employee ID:</strong>
+        {{ employee.employee_id }}
+    </p>
+
+    <p>
+        <strong>Name:</strong>
+        {{ employee.full_name }}
+    </p>
+
+    <p>
+        <strong>Department:</strong>
+        {{ employee.department }}
+    </p>
+
+    <p>
+        <strong>Designation:</strong>
+        {{ employee.designation }}
+    </p>
+
+    <br>
+
+    <a href="{{ url_for('employee.start_enrollment',
+                        employee_id=employee.id) }}"
+       class="btn-primary">
+
+        Start Face Enrollment
+
+    </a>
+
+</div>
+
+{% endblock %}

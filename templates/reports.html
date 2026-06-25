@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}
+Reports
+{% endblock %}
+
+{% block page_title %}
+Reports
+{% endblock %}
+
+{% block content %}
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+        <h3>Total Employees</h3>
+        <p>{{ total_employees }}</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Present Today</h3>
+        <p>{{ present_today }}</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Absent Today</h3>
+        <p>{{ absent_today }}</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Security Events</h3>
+        <p>{{ total_security_events }}</p>
+    </div>
+
+</div>
+
+<br>
+
+<div class="card">
+
+    <h2>Attendance Records</h2>
+
+    <table class="employee-table">
+
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Check In</th>
+                <th>Check Out</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for attendance, employee in attendance_records %}
+
+            <tr>
+
+                <td>{{ employee.employee_id }}</td>
+
+                <td>{{ employee.full_name }}</td>
+
+                <td>{{ attendance.attendance_date }}</td>
+
+                <td>{{ attendance.check_in or "-" }}</td>
+
+                <td>{{ attendance.check_out or "-" }}</td>
+
+                <td>{{ attendance.status }}</td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<br>
+
+<div class="card">
+
+    <h2>Security Summary</h2>
+
+    <table class="employee-table">
+
+        <thead>
+
+            <tr>
+                <th>Event Type</th>
+                <th>Count</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for event_type, count in security_summary %}
+
+            <tr>
+
+                <td>{{ event_type }}</td>
+
+                <td>{{ count }}</td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}
