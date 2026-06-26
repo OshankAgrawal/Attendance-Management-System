@@ -219,18 +219,18 @@ __marimo__/
 
 
 # test files of the application
-create_tables.py
-test_attendance_verification.py
-test_attendance.py
-test_db.py
-test_embedding.py
-test_enrollement.py
-test_face_capture.py
-test_insightface.py
-test_liveness.py
-test_quality.py
-test_security_event.py
-test_verification.py
+01_create_tables.py
+10_test_attendance_verification.py
+07_test_attendance.py
+00_test_db.py
+06_test_embedding.py
+02_test_enrollement.py
+03_test_face_capture.py
+05_test_insightface.py
+09_test_liveness.py
+04_test_quality.py
+11_test_security_event.py
+08_test_verification.py
 test.jpg
 
 data/
